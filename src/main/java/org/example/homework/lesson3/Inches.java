@@ -8,7 +8,7 @@ public class Inches {
     private static final double INCH = 2.54;
 
     public static void main(String[] args) {
-        double inch = INCH;
+        double inch = INCH; // эту переменную можно не вводить, а в 14 строке использовать константу
         for (int i = 1; i <= 20; i++) {
 
             System.out.println(i + " inches " + i * inch + " cm ");
