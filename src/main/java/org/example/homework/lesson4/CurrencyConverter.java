@@ -38,7 +38,7 @@ public class CurrencyConverter {
         return null;
     }
 
-    private static String convertCurrency(String currency) {
+    private static String convertCurrency(String currency) {    // этот метод я бы назвал как-то иначе. он не конвертирует сумму, а выбирает currencyCode
         if (UAH.equalsIgnoreCase(currency)) {
             return EUR;
         } else if (EUR.equalsIgnoreCase(currency)) {
