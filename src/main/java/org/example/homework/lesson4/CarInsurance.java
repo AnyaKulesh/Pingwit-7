@@ -21,10 +21,9 @@ public class CarInsurance {
         boolean wereAccident = scanner.nextBoolean();
         System.out.println(" Do you have our insurance?");
         boolean haveInsurance = scanner.nextBoolean();
-        // а вот здесь я бы добавил пусту строку, чтобы визуально отделить код с вычислениями от кода с вводом данных
+
         BigDecimal insuranceValue = calculateCarInsurance(engineCapacity, wereAccident, haveInsurance);
         System.out.println("Your car insurance policy costs : " + insuranceValue + " EUR ");
-// лишняя пустая строка
     }
 
     private static BigDecimal calculateCarInsurance(int capacity, boolean accident, boolean client) {   // плиз переименуй параметы метода, в main методе имена подходящие: wereAccident, haveInsurance
