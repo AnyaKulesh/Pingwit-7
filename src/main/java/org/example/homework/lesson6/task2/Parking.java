@@ -9,7 +9,7 @@ public class Parking {
         this.cars = cars;
     }
 
-    public boolean open(String regNumber) {
+    public boolean open(String regNumber) {  // отлично импровизировала!
         for (Car car : cars) {
             if (regNumber.equals(car.getCarRegistrationNumber())) {
                 System.out.println("Access allowed for " + car);

@@ -1,6 +1,6 @@
 package org.example.homework.lesson6.task2;
 
-public class Data {
+public class Data {  // Data - слишком широкое понятие, в программах под него подпадает очень мнгое. Плиз, придумай этому классу более информативное название.
     private String name;
     private String surname;
     private String phoneNumber;

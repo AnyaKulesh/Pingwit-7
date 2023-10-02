@@ -1,7 +1,7 @@
 package org.example.homework.lesson6.task2;
 
 public class Car {
-    private String carRegistrationNumber;
+    private String carRegistrationNumber;  // небольшое уточнение - это поле уже находится внутри класса Car, поэтому достаточно будет registrationNumber
     private Data dataOwner;
 
     public Car(String carRegistrationNumber, Data dataOwner) {
