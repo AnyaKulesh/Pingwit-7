@@ -10,13 +10,15 @@ package org.example.homework.lesson6.task2;
  */
 public class Main {
     public static void main(String[] args) {
+
         Car[] cars = new Car[]{
-                new Car("6915CT7", new Data("Alex", "Kazlou", "80291675493", "alexgood@gamil.com")),
-                new Car("0743MP5", new Data("Hanna", "Smirnova", "80335672413", "annasmir@gmail.com")),
-                new Car("6789AM3", new Data()),
-                new Car("9826BP7", new Data()),
-                new Car("9078PB4", new Data("Spencer", "Agutin", "375291765843", "agutinA@gmail.com"))
+                new Car("6915CT7", new Owner("Alex", "Kazlou", "80291675493", "alexgood@gamil.com")),
+                new Car("0743MP5", new Owner("Hanna", "Smirnova", "80335672413", "annasmir@gmail.com")),
+                new Car("6789AM3", new Owner()),
+                new Car("9826BP7", new Owner()),
+                new Car("9078PB4", new Owner("Spencer", "Agutin", "375291765843", "agutinA@gmail.com"))
         };
+
         Parking parking = new Parking(cars);
         parking.open("6915CT7");
         parking.open("7819NP7");
