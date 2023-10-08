@@ -23,7 +23,7 @@ public class HarvestStatisticService {
         return totalWeight;
     }
 
-    private int countPlant(Harvest[] harvest) {
+    private int countPlant(Harvest[] harvest) { // крутое и сложное решение! принято, в дальнейшем покажу, как это сделать проще с использование коллекций
         boolean[] counted = new boolean[harvest.length];
         boolean allCounted = false;
         int numPlants = 0;

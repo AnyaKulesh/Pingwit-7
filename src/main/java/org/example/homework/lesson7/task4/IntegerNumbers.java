@@ -16,7 +16,7 @@ public class IntegerNumbers {
         System.out.println(Arrays.toString(newArray));
     }
 
-    private static int[] filterEvenNumbers(int[] array) {
+    private static int[] filterEvenNumbers(int[] array) { // этот метод не только находит четные числа, но и умножает их на 5, это нужно отразить в имени
         int[] result = new int[array.length];
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 0) {

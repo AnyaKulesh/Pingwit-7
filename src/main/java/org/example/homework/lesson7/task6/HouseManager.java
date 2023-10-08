@@ -7,6 +7,9 @@ package org.example.homework.lesson7.task6;
 
  */
 public class HouseManager {
+    // этот класс задуман только для того,чтобы производить манипуляции над данными, а не чтобы хранить их.
+    // поэтому в нем не нужно хранить массив houses. такого рода массив нужно создавать в методе main и передавать
+    // в методы
     private House[] houses;
 
     public HouseManager() {
@@ -23,7 +26,7 @@ public class HouseManager {
         return houses;
     }
 
-    public int calculateTenants(boolean isIndividual) {
+    public int calculateTenants(boolean isIndividual) { // этот метод должен принимать аргументом массив типа House
         int numberOfTenants = 0;
         for (House house : houses) {
             if (house.getIsIndividual() == isIndividual) {
@@ -33,7 +36,7 @@ public class HouseManager {
         return numberOfTenants;
     }
 
-    public void printIndividualHouse(boolean isIndividual) {
+    public void printIndividualHouse(boolean isIndividual) {// этот метод должен принимать аргументом массив типа House
         System.out.println((isIndividual ? "Individual" : "Multi-floor") + " houses:");
         for (House house : houses) {
             if (house.getIsIndividual() == isIndividual) {
@@ -42,10 +45,10 @@ public class HouseManager {
         }
     }
 
-    public void turnOnHeating(boolean isIndividual) {
+    public void turnOnHeating(boolean isIndividual) { // этот метод должен принимать аргументом массив типа House
         System.out.println("Turn on heating: ");
         for (House house : houses) {
-            if (house.getIsIndividual() == isIndividual) {
+            if (house.getIsIndividual() == isIndividual) { // сравнение == isIndividual в данном случае избыточно. house.getIsIndividual() вернет boolean, который будет true только если бом индивидуальный
                 if (house.getFloorNumber() > 5) {
                     System.out.print("   ");
                     house.turnOnHeating();
