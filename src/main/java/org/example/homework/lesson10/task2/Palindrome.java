@@ -7,7 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 Сделайте два решения - через массив и через использование класса StringUtils.
 
  */
-public class Palindrome {
+public class Palindrome {  // я предложил бы дать этому классу более точное имя. Он проверяет, является ли слово палиндромом, поэтому PalindromeChecker или что-то подобное подошло бы лучше
     public boolean isPalindrome(String string) {
         char[] symbol = string.toLowerCase()
                 .replace(" ", "")

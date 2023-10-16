@@ -12,7 +12,7 @@ username - непустая строка
 пароль - не пустая строка
 
  */
-public class ValidationService {
+public class ValidationService {  // классы, которые делают валидацию, называют обычно по схеме ...Validator. В данном случае, UserDataValidator
     private static final Pattern EMAIL_PATTERN = Pattern.compile("^([a-z0-9_-]+\\.)*[a-z0-9_-]+@[a-z0-9_-]+(\\.[a-z0-9_-]+)*\\.[a-z]{2,6}$");
     private static final Pattern DIGITS_ONLY = Pattern.compile("\\d*");
 
@@ -25,11 +25,11 @@ public class ValidationService {
                 validatePhoneNumber(userData.phoneNumber());
     }
 
-    private boolean validateNotEmpty(String username) {
+    private boolean validateNotEmpty(String username) {  // а что будет, если передать сюда null? попробуй использовать для проверки метод из StringUtils
         return !username.isEmpty();
     }
 
-    private boolean validateOnlyLetters(String name) {
+    private boolean validateOnlyLetters(String name) {  // этот метод я бы рекомендовал реализовать через регэксп, по аналогии с DIGITS_ONLY. регексп быстро гуглится
         String lowerCaseName = name.toLowerCase();
         for (int i = 0; i < lowerCaseName.length(); i++) {
             if (!isSymbolLetter(lowerCaseName.charAt(i))) {
@@ -39,7 +39,7 @@ public class ValidationService {
         return true;
     }
 
-    private boolean isSymbolLetter(char symbol) {
+    private boolean isSymbolLetter(char symbol) {     // круто, находчиво!
         return symbol >= 'a' && symbol <= 'z';
     }
 
@@ -47,7 +47,9 @@ public class ValidationService {
         return EMAIL_PATTERN.matcher(email).matches();
     }
 
-    private boolean validatePhoneNumber(String phoneNumber) {
+    private boolean validatePhoneNumber(String phoneNumber) { // этот метод проверяет любую строку на содержание только цифр. если нам нужно буде
+        // проверять еще какое-то значение на только цифры - мы можем использовать его, нам не нужно писать эту логику еще раз.
+        // поэтому, предлагаю его назвать более обще - validateDigitsOnly
         return DIGITS_ONLY.matcher(phoneNumber).matches();
     }
 }
