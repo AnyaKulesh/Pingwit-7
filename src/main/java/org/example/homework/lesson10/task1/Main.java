@@ -17,20 +17,23 @@ public class Main {
         String phoneNumber = scanner.nextLine();
         System.out.println("Enter password");
         String password = scanner.nextLine();
-
         UserData user = new UserData(username, name, surname, email, phoneNumber, password);
-        System.out.println(user);
-        ValidationService validationService = new ValidationService();
-        System.out.println(validationService.validateUserData(user));
+
+        UserDataValidator validationService = new UserDataValidator();
+        printUserValidation(validationService, user);
 
         // если запустить валидацию с такими данными - получим проблему.
         UserData ivanov = new UserData(null, null, "Ivanov", "ii@mail.com", "325599", "899898");
         // я предлагаю воспользоваться String.format для составления сообщения
-        if (validationService.validateUserData(ivanov)) {
-            String message = String.format("User data %s is valid", ivanov);
+        printUserValidation(validationService, ivanov);
+    }
+
+    private static void printUserValidation(UserDataValidator validator, UserData user) {
+        if (validator.validateUserData(user)) {
+            String message = String.format("User data %s is valid", user);
             System.out.println(message);
         } else {
-            String message = String.format("User data %s is invalid", ivanov);
+            String message = String.format("User data %s is invalid", user);
             System.out.println(message);
         }
     }
