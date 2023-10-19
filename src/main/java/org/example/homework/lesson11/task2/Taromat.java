@@ -17,7 +17,7 @@ public class Taromat {
         int countPlastic = 0;
         int countGlass = 0;
         int countAluminium = 0;
-        BigDecimal totalAmount = BigDecimal.valueOf(0);
+        BigDecimal totalAmount = BigDecimal.valueOf(0); // для нуля у BigDecimal есть удобная константа BigDecimal.ZERO, рекомендую
         for (Tare tare : tares) {
             if (tare.getMaterial() == Material.PLASTIC) {
                 countPlastic++;

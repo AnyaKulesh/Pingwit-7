@@ -37,11 +37,11 @@ public class Pet {
         this.owner = owner;
     }
 
-    public String getCard() {
+    public String getCard() { // здесь не хватает маленькой детали : Этот метод должен работать идентично у всех питомцев, нужно запретить возможность его переиспользования (переопределения).
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Pet ").append(petName);
         if (owner == null) {
-            stringBuilder.append(" is homeless.");
+            stringBuilder.append(" is homeless.");  // красиво! :)
         } else {
             stringBuilder.append(" belongs to ")
                     .append(owner.getName())

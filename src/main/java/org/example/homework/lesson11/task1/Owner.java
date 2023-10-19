@@ -1,7 +1,7 @@
 package org.example.homework.lesson11.task1;
 
 public class Owner {
-    private String name;
+    private String name; // сделай плиз поля final
     private String surname;
     private String phoneNumber;
     private String email;
