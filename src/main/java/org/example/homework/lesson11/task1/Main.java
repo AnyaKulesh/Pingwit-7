@@ -25,6 +25,7 @@ public class Main {
             System.out.println(pet.getCard());
         }
 
+
         seva.setOwner(sasha);
         System.out.println(seva.getCard());
     }

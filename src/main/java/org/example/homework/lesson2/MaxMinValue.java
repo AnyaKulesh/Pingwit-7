@@ -23,4 +23,5 @@ public class MaxMinValue {
         System.out.println("Double max value: " + Double.MAX_VALUE);
         System.out.println("Double min value: " + Double.MIN_VALUE);
     }
+
 }

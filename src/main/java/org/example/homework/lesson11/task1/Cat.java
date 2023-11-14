@@ -6,7 +6,7 @@ package org.example.homework.lesson11.task1;
  для хомяка - объем щек + что угодно на ваше усмотрение). Также добавьте каждому типу питомца по собственному методу,
  на ваше усмотрение.
  */
-public class Cat extends Pet {
+public  class Cat extends Pet {
     private final String eyesColor;
     private final int age;
 

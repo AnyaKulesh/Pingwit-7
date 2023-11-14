@@ -1,5 +1,6 @@
 package org.example.homework.lesson9.Box;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 /*
@@ -29,5 +30,12 @@ public class Main {
             box = bankWarehouse.next();
             System.out.println(box);
         }
+
+        String html = "<html>\n" +
+                      "     <body>\n" +
+                      "        <p>Hello World</p>\n" +
+                      "    </body>\n" +
+                      "</html>\n";
+        System.out.println(html);
     }
 }
