@@ -8,7 +8,7 @@ package org.example.homework.lesson12.task4;
 public interface PersonReverser {
     Person reversePerson(Person person);
 
-    static String updateCase(String value) {
+    static String updateCase(String value) { // очень детально
         return value.substring(0, 1).toUpperCase() + value.substring(1).toLowerCase();
     }
 }

@@ -11,12 +11,12 @@ package org.example.homework.lesson12.task2;
  */
 public class Application {
     public static void main(String[] args) {
-        int[] numbers = new int []{3,9,45,23,78,49,90};
-        for (int i = 0 ; i < numbers.length; i++){
+        int[] numbers = new int[]{3, 9, 45, 23, 78, 49, 90};
+        for (int i = 0; i < numbers.length; i++) {
             try {
-                int result = divide(100, numbers [i] - 9);
+                int result = divide(100, numbers[i] - 9);
                 System.out.println(result);
-            } catch (DivideByZeroException exception) {
+            } catch (DivideByZeroException exception) {  // здесь необязательно было создавать свою новый тип ошибки. Этот код бросает AriphmeticalException, его и можно обработать
                 System.out.printf("While processing element №%d occurred an error: %s%n", i, exception.getMessage());
             }
         }

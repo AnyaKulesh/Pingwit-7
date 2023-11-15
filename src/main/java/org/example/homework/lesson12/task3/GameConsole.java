@@ -1,6 +1,6 @@
 package org.example.homework.lesson12.task3;
 
-public class GameConsole extends Device{
+public class GameConsole extends Device {
     private final String model;
 
     public GameConsole(String name, String model) {
