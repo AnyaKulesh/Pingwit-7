@@ -23,6 +23,9 @@ public class Application {
             validator.validate(customer);
             System.out.println("Successfully validated");
         } catch (Exception e) {
+            // как я понял, ты ловишь здесь все типы эксепшенов, чтобы после первого невалидного поля программа продолжила работу.
+            // в учебной программе это норм, но в работе не принято ловить все эксепшены без разбора. Здесь нужно было бы отловить
+            // IllegalAccessException, а остальные не ловить.
             System.out.println(e.getMessage());
         }
     }
