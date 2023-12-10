@@ -9,8 +9,8 @@ public class DefaultValueProcessor {
         Class<?> clazz = object.getClass();
         for (Field declaredField : clazz.getDeclaredFields()) {
             for (Annotation annotation : declaredField.getAnnotations()) {
+                declaredField.setAccessible(true); // эту строку надо поместить перед declaredField.get(object), иначе ловим IllegalAccessException
                 if (annotation.annotationType().equals(DefaultValue.class) && declaredField.get(object) == null) {
-                    declaredField.setAccessible(true);
                     if (declaredField.getType().equals(String.class)) {
                         declaredField.set(object, "DefaultValue");
                     }
