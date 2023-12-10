@@ -9,10 +9,10 @@ package org.example.homework.lesson11.task1;
 Также у всех питомцев должен быть метод, который возращает строку-карточку питомца: “Питомец Жучка принадлежит Игорю Николаеву. Контакты хоязина: +37078788787, in@mail.com”. Этот метод должен работать идентично у всех питомцев, нужно запретить возможность его переиспользования. Это предлагаю вынести в родительский класс Pet.
 
  */
-public class Pet {
-    private final long id;
-    private final String petName;
-    private Owner owner;
+public abstract class Pet {
+    protected final long id;
+    protected final String petName;
+    protected Owner owner;
 
 
     public Pet(long id, String petName, Owner owner) {
