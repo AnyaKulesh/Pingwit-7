@@ -1,0 +1,68 @@
+[
+  {
+    "field_xms": "Tishovka1",
+    "square_xms": 35,
+    "plant": "Corn",
+    "weight": 200.20
+  },
+  {
+    "field_xms": "Tishovka2",
+    "square_xms": 10,
+    "plant": "Potato",
+    "weight": 200.20
+  },
+  {
+    "field_xms": "Kordon",
+    "square_xms": 5,
+    "plant": "Corn",
+    "weight": 100.20
+  },
+  {
+    "field_xms": "Tishovka1",
+    "square_xms": 30,
+    "plant": "Potato",
+    "weight": 1100.90
+  },
+  {
+    "field_xms": "Fedorovka",
+    "square_xms": 10,
+    "plant": "Strawberry",
+    "weight": 50.5
+  },
+  {
+    "field_xms": "Luninets1",
+    "square_xms": 5,
+    "plant": "Strawberry",
+    "weight": 80.5
+  },
+  {
+    "field_xms": "Ivanovo",
+    "square_xms": 20,
+    "plant": "Corn",
+    "weight": 350.6
+  },
+  {
+    "field_xms": "Bigosovo",
+    "square_xms": 10,
+    "plant": "Potato",
+    "weight": 1004.5
+  },
+  {
+    "field_xms": "Leonovo",
+    "square_xms": 50,
+    "plant": "Wheat",
+    "weight": 1000
+  },
+  {
+    "field_xms": "Kordon",
+    "square_xms": 50,
+    "plant": "Wheat",
+    "weight": 500
+  },
+  {
+    "field_xms": "Luninets1",
+    "square_xms": 35,
+    "plant": "Corn",
+    "weight": 10
+  }
+]
