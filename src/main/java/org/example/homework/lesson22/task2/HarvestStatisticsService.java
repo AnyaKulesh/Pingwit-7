@@ -2,28 +2,24 @@ package org.example.homework.lesson22.task2;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class HarvestStatisticsService {
-    public static HarvestStatistics[] calculateStatistics(Harvest[] harvest) {
-        Map<String, BigDecimal> statistics = new HashMap<>();
+    public static Map<String, HarvestStatistics> calculateStatistics(List<Harvest> harvest) {
+        Map<String, HarvestStatistics> statistics = new HashMap<>();
         for (Harvest harvestItem : harvest) {
             if (statistics.containsKey(harvestItem.getPlant())) {
-                BigDecimal newWeight = statistics.get(harvestItem.getPlant()).add(harvestItem.getWeight());
-                BigDecimal newSquare = statistics.get(harvestItem.getPlant()).add(harvestItem.getSquare());
-                statistics.put(harvestItem.getPlant(), newWeight);
-                statistics.put(harvestItem.getPlant(), newSquare);
+                HarvestStatistics itemStatistics = statistics.get(harvestItem.getPlant());
+                BigDecimal newWeight = itemStatistics.getTotalWeight().add(harvestItem.getWeight());
+                BigDecimal newSquare = itemStatistics.getTotalSquare().add(harvestItem.getSquare());
+                itemStatistics.setTotalWeight(newWeight);
+                itemStatistics.setTotalSquare(newSquare);
             } else {
-                statistics.put(harvestItem.getPlant(), harvestItem.getWeight());
-                statistics.put(harvestItem.getPlant(), harvestItem.getSquare());
+                statistics.put(harvestItem.getPlant(), new HarvestStatistics(harvestItem.getPlant(), harvestItem.getWeight(), harvestItem.getSquare()));
             }
         }
-        HarvestStatistics[] result = new HarvestStatistics[statistics.size()];
-        int i = 0;
-        for (Map.Entry<String, BigDecimal> entry : statistics.entrySet()) {
-            result[i] = new HarvestStatistics(entry.getKey(), entry.getValue());
-            i++;
-        }
-        return result;
+
+        return statistics;
     }
 }
