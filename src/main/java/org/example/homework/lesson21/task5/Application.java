@@ -15,6 +15,7 @@ public class Application {
         System.out.println("Before change : " + srcCollection);
         System.out.println("Names to keep : " + keepCollection);
 
+        // это рабочий код, но есть способ лаконичнее (строки 27-28)
         List<String> removeCollection = new ArrayList<>();
         for (String element : srcCollection) {
             if (!keepCollection.contains(element)) {
@@ -22,6 +23,9 @@ public class Application {
             }
         }
         srcCollection.removeAll(removeCollection);
+
+        /*srcCollection.retainAll(keepCollection);
+        System.out.println(srcCollection);*/
 
         System.out.println("After change : " + srcCollection );
     }
