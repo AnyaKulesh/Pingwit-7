@@ -1,5 +1,6 @@
 package org.example.homework.lesson22.task2;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
@@ -11,9 +12,15 @@ import java.util.Map;
 
 public class Application {
     private static final String PATH = "src/main/java/org/example/homework/lesson22/task2/harvest.json";
+
     public static void main(String[] args) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
+
         List<Harvest> harvests = Arrays.asList(objectMapper.readValue(new File(PATH), Harvest[].class));
+
+        // object mapper умеет вычитывать объекты в коллекцию:
+        List<Harvest> harvests2 = objectMapper.readValue(new File(PATH), new TypeReference<List<Harvest>>() {
+        });
         System.out.println(harvests);
         Map<String, HarvestStatistics> harvestStatistics = HarvestStatisticsService.calculateStatistics(harvests);
 
