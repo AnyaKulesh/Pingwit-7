@@ -26,16 +26,15 @@ public class Application {
         accountInfos.sort(comparingByNameSurname);
         System.out.println(accountInfos);
 
-        Comparator <AccountInfo> comparingByBirthDate = Comparator.comparing(AccountInfo :: localDate).reversed();
+        Comparator<AccountInfo> comparingByBirthDate = Comparator.comparing(AccountInfo::localDate).reversed();
         accountInfos.sort(comparingByBirthDate);
         System.out.println(accountInfos);
 
         Comparator<AccountInfo> comparingAll = Comparator
-                .comparing(AccountInfo ::name)
-                .thenComparing(AccountInfo ::surname)
+                .comparing(AccountInfo::name)
+                .thenComparing(AccountInfo::surname)
                 .thenComparing(AccountInfo::localDate);
         accountInfos.sort(comparingAll);
         System.out.println(accountInfos);
-
     }
 }
