@@ -27,7 +27,7 @@ public class Application {
                 new Address("Kiev", "Darvin", 156, 98)
         );
         List<String> collectStreets = addressList.stream()
-                .map(Address::getStreet)
+                .map(Address::getStreet) // тут я не совсем точно сформулировал - оставь в итоговом списке только уникальные названия
                 .toList();
         System.out.println(collectStreets);
     }

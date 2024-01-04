@@ -29,7 +29,7 @@ public class Application {
 
         Set<String> collectUniqueCities = addressList.stream()
                 .map(Address::getCity)
-                .collect(Collectors.toSet());
+                .collect(Collectors.toSet()); // по заданию, города надо собрать в список, не в сет. тебе поможет метод distinct() перед вызовом коллектора
         System.out.println(collectUniqueCities);
     }
 }

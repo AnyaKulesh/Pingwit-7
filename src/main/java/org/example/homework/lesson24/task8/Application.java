@@ -15,7 +15,7 @@ public class Application {
                 .forEach(System.out::println);
 
     }
-    private static String money(Integer x) {
+    private static String money(Integer x) { // все отлично работает, но имя для метода я бы рекомендовал более подробное
         int rest100 = x % 100;
         if (rest100 >= 10 && rest100 <= 19) {
             return x + " рублей";
