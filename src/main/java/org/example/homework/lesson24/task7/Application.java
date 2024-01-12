@@ -1,7 +1,10 @@
 package org.example.homework.lesson24.task7;
 
-import java.util.Arrays;
+import org.example.homework.lesson12.task1.Address;
+
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
 
@@ -19,6 +22,7 @@ public class Application {
         IntStream intStream = IntStream.rangeClosed(START_INCLUSIVE, END_INCLUSIVE)
                 .filter(i -> i % DIVISION_NUMBER == 0);
         List<Integer> list = intStream.boxed().toList();
+
         System.out.println(list);
     }
 }
