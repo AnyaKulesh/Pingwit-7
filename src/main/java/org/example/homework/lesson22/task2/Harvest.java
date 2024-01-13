@@ -13,6 +13,12 @@ public class Harvest {
     private  String plant;
     private  BigDecimal weight;
 
+    public Harvest(String field, BigDecimal square, String plant, BigDecimal weight) {
+        this.field = field;
+        this.square = square;
+        this.plant = plant;
+        this.weight = weight;
+    }
 
     public String getField() {
         return field;

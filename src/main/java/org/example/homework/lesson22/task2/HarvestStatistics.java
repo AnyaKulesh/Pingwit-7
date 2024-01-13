@@ -3,6 +3,7 @@ package org.example.homework.lesson22.task2;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class HarvestStatistics {
     private final String plant;
@@ -42,5 +43,18 @@ public class HarvestStatistics {
                 ", totalWeight=" + totalWeight +
                 ", totalSquare=" + totalSquare +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        HarvestStatistics that = (HarvestStatistics) o;
+        return Objects.equals(plant, that.plant) && Objects.equals(totalWeight, that.totalWeight) && Objects.equals(totalSquare, that.totalSquare);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(plant, totalWeight, totalSquare);
     }
 }
