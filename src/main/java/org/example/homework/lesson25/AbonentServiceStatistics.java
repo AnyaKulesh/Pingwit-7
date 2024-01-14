@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
  */
 public class AbonentServiceStatistics {
     public String calculateAgeStatistics(List<Abonent> abonentList) {
-        IntSummaryStatistics statistics = abonentList.stream()
+        IntSummaryStatistics statistics = abonentList.stream()// можно точнее ageStatistics
                 .filter(Objects::nonNull)
                 .map(Abonent::getDateOfBirth)
                 .filter(Objects::nonNull)
@@ -30,7 +30,7 @@ public class AbonentServiceStatistics {
     }
 
     public String calculateVipContractStatistics(List<Abonent> abonentList) {
-        IntSummaryStatistics statistics = abonentList.stream()
+        IntSummaryStatistics statistics = abonentList.stream()// можно точнее - contractStatistics
                 .filter(Objects::nonNull)
                 .filter(abonent -> Boolean.TRUE.equals(abonent.getVip()))
                 .map(Abonent::getContractDate)

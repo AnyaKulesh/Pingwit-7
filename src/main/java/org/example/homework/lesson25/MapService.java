@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 -  метод принимает список абонентов и группирует их по городам
  */
 public class MapService {
-    public Map<String, Abonent> calculateNotVip(List<Abonent> abonentList) {
+    public Map<String, Abonent> calculateNotVip(List<Abonent> abonentList) { // можно поточнее: mapNotVipByContract
         return abonentList.stream()
                 .filter(Objects::nonNull)
                 .filter(abonent -> Boolean.FALSE.equals(abonent.getVip()))
