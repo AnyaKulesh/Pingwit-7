@@ -33,18 +33,39 @@ public class OrderTransaction {
             statement.setDate(3, Date.valueOf(LocalDate.now()));
             statement.setInt(4, 16);
             statement.setString(5, "payment by card");
-            statement.executeUpdate();
+            statement.executeUpdate(); //
 
             System.out.println("Order created");
             List<OrderItem> orderItems = List.of(
+                    // в этих объектах OrderItem в качестве orderId я предполагал использовать orderId из строки 30
+                    // таким образом, мы создадим заказ со строчками
                     new OrderItem(9, 11, 10),
                     new OrderItem(20, 31, 7),
                     new OrderItem(1, 41, 11)
             );
             prepareOrderItemStatement(connection, dataSource, orderItems);
+            // а здесь можно использовать стрим:
+            // orderItems.forEach(item -> createOrderItem(connection, dataSource, item));
 
             System.out.println("Order items created");
             connection.commit();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    // этот метод не только готовит statement, но и выполняет их. я бы предложил его немного изменить - принимать один объект OrderItem
+    // и для него собирать стейтмент и выполнять апдейт:
+    private static void createOrderItem(Connection connection, DataSource dataSource, OrderItem item) {
+        try {
+            PreparedStatement statement = connection.prepareStatement(
+                    "INSERT INTO order_items(id, order_id, product_id, quantity) VALUES (?,?,?,?)");
+            int orderItemId = getNextOrderItemId(dataSource);
+            statement.setInt(1, orderItemId);
+            statement.setInt(2, item.orderId());
+            statement.setInt(3, item.productId());
+            statement.setInt(4, item.quantity());
+            statement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
